@@ -21,9 +21,14 @@ for($i=0;$i<$nfile;$i++){
   fclose($fp);
 }
 
-foreach($data1 as $item){
-  echo $item[0]." ".count($item[1])."\n";
+ksort($data1);
+$cc1=0;
+foreach($data1 as $key => $value ){
+$cc2=count($value);
+$cc1+=$cc2;
+  echo $key." ".$cc2."\n";
 }
+echo $cc1."\n";
 
 echo count($data2)."\n";
 
