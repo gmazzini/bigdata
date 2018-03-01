@@ -1,3 +1,5 @@
 curl -k https://raw.githubusercontent.com/gmazzini/bigdata/master/arubasyslog.c > arubasyslog.c
 curl -k https://raw.githubusercontent.com/gmazzini/bigdata/master/hash_32a.c > hash_32a.c
 curl -k https://raw.githubusercontent.com/gmazzini/bifgata/master/fnv.h > fnv.h
+curl -k https://raw.githubusercontent.com/gmazzini/bigdata/master/myc > myc
+curl -k https://raw.githubusercontent.com/gmazzini/bigdata/master/makefile > makefile
