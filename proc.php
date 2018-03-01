@@ -21,12 +21,11 @@ for($i=0;$i<$nfile;$i++){
   fclose($fp);
 }
 
-print_r($data1);
-print_r($data2);
+foreach($data1 as $item){
+  echo $item[0]." ".count($item[1])."\n";
+}
 
-echo count($data1)."\n";
 echo count($data2)."\n";
-
 
 
 ?>
