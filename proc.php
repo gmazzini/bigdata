@@ -8,6 +8,7 @@ error_reporting(0);
 
 $data1=array();
 $data2=array();
+$data3=array();
 
 for($i=0;$i<$nfile;$i++){
   if($files[$i]=="."||$files[$i]=="..")continue;
@@ -18,6 +19,13 @@ for($i=0;$i<$nfile;$i++){
     list($timestamp,$ip,$maca,$type)=$myline;
     $data1[$ip][$maca]++;
     $data2[$maca]++;
+    if($type==1){
+      $data3[$ip][$maca]=$timestamp;
+      $data3[$ip]["user"]++;
+    }
+    if(($type==2||$type==3) && $data3[$ip][$maca]>0){
+     $data3[$ip][$maca]=0; 
+    }
   }
   fclose($fp);
 }
