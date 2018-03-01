@@ -2,15 +2,18 @@
 
 written by Gianluca Mazzini gianluca@mazzini.org
 
-started in 2015
+started in 2018
 
-syslog C demon with file logging and query issue
+bigdata C demon with file logging
 
-mysyslog receives syslog file on 514 UDP port, process it, record on a file the activity and takes the last activity of a given IP for fast query
+bigdata receives syslog file on 514 UDP port from aruba access point, process it and record on a file the activity 
 
-configuration file is space or \n separated fields and is supposed to be in /mysyslog
+configuration file is space or \n separated fields and is supposed to be in /bigdata
 
-only one configuration file is necessary: mysyslog.conf with configuration action
+only one configuration file is necessary: bigdata.conf with configuration action
+
+
+TO BE DONE
 
 mysyslog.conf contains in the first line: the syslog UDP receiving port, the syslog priority to be processed, the number of client allowed to send syslog; then the following lines are the ipv4 address of the allowed clients
 
