@@ -14,7 +14,7 @@
 
 #define BUFMSG 1000
 #define SSIDLEN 64
-#define NTHREAD 256
+#define NTHREAD 1024
 #define FILECONFIG "/arubasyslog/arubasyslog.conf"
 #define IPTOT 1048576
 #define IPCLASS 0b00001010001000000000000000000000 // 10.32.0.0
