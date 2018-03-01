@@ -3,6 +3,7 @@
 $dir="/arubasyslog/log";
 $files=scandir($dir);
 $nfile=count($files);
+$data1=array();
 
 for($i=0;$i<$nfile;$i++){
   if($files[$i]=="."||$files[$i]=="..")continue;
