@@ -57,5 +57,4 @@ printf("UserperAP=%.2f\n",$totuser/$totap);
 echo "minUserAP=".$minuser."\n";
 echo "maxUserAP=".$maxuser."\n";
 
-
 ?>
