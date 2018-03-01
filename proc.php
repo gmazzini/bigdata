@@ -1,5 +1,5 @@
 <?php
-// v0.08
+// v0.09
 
 $dir="/arubasyslog/log";
 $files=scandir($dir);
@@ -20,17 +20,20 @@ for($i=0;$i<$nfile;$i++){
     $data1[$ip][$maca]++;
     $data2[$maca]++;
     if($type==1){
-      $data3[$ip][$maca]=$timestamp;
-      $data3[$ip]["user"]++;
-      $data3[$ip]["event"]++;
+      if($data3[$ip][$maca]["last"]!=1){
+        $data3[$ip][$maca]=$timestamp;
+        $data3[$ip]["user"]++;
+        $data3[$ip]["event"]++;
+      }
     }
-    if(($type==2||$type==3) && $data3[$ip][$maca]>0){
+    else if(($type==2||$type==3) && $data3[$ip][$maca]>0 && $data3[$ip][$maca]["last"]==1){
       $delta=$timestamp-$data3[$ip][$maca];
       if($data3[$ip]["user"]>0)$data3[$ip]["user"]--;
       $data3[$ip]["acctime"]+=$delta;
       $data3[$ip]["accuser"]+=$data3[$ip]["user"];
-      $data3[$ip][$maca]=0; 
+      $data3[$ip][$maca]=0;
     }
+    $data3[$ip][$maca]["last"]=$type;
   }
   fclose($fp);
 }
@@ -48,7 +51,7 @@ foreach($data1 as $ip => $value ){
   if($cc2>$maxuser)$maxuser=$cc2;
   $avetime=$data3[$ip]["acctime"]/$data3[$ip]["event"];
   $aveuser=$data3[$ip]["accuser"]/$data3[$ip]["event"];
-  $hostname=dns_get_record($ip,DNS_PTR);
+  $hostname=gethostbyaddr($ip);
   printf("%s %s %d %.2f %.2f\n",$ip,$hostname,$cc2,$aveuser,$avetime);
 }
 echo "UserUniqueAP=".$totuser."\n";
