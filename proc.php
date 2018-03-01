@@ -12,7 +12,7 @@ for($i=0;$i<$nfile;$i++){
     fscanf($fp,"%ul %s %ul %d\n",$timestamp,$ip,$maca,$type);
     if(feof($fp))break;
     $data1[$ip][$maca]++;
-    echo $ip." ";
+    echo $files[$i]." ".$ip." ".$maca;
   }
   fclose($fp);
 }
