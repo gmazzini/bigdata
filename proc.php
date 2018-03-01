@@ -6,9 +6,13 @@ $nfile=count($files);
 
 for($i=0;$i<$nfile;$i++){
   if($files[$i]=="."||$files[$i]=="..")continue;
-  print($files[$i]);
+  $fp=fopen($dir.$files[$i],"r");
+  fscanf($fp,"%ul %s %ul %d\n",$timestamp,$ip,$maca,$type);
+  $data1[$ip][$maca]++;
+  fclose($fp);
 }
 
+print_r($data1);
 
 
 ?>
