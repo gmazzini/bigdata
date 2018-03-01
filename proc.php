@@ -9,10 +9,12 @@ for($i=0;$i<$nfile;$i++){
   if($files[$i]=="."||$files[$i]=="..")continue;
   $fp=fopen($dir."/".$files[$i],"r");
   for(;;){
-    fscanf($fp,"%ul %s %ul %d\n",$timestamp,$ip,$maca,$type);
+    $myline=fscanf($fp,"%ul %s %ul %d\n");
     if(feof($fp))break;
+    list($timestamp,$ip,$maca,$type)=$myline;
     $data1[$ip][$maca]++;
-    echo $files[$i]." ".$ip." ".$maca;
+    echo $myline."\n";
+    echo $files[$i]." ".$ip." ".$maca."\n";
   }
   fclose($fp);
 }
