@@ -1,5 +1,5 @@
 <?php
-// v0.01
+// v0.02
 
 $dir="/arubasyslog/log";
 $files=scandir($dir);
@@ -38,9 +38,9 @@ foreach($data1 as $key => $value ){
 echo "UserUniqueAP=".$totuser."\n";
 echo "TotalUser=".count($data2)."\n";
 echo "TotAP=".$totap."\n";
-echo "UserperAP=".$totuser/$totap."\n";
-echo "minUser=".$minuser."\n";
-echo "maxUser=".$maxuser."\n";
+printf("UserperAP=%7.2f\n",$totuser/$totap);
+echo "minUserAP=".$minuser."\n";
+echo "maxUserAP=".$maxuser."\n";
 
 
 ?>
