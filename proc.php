@@ -1,4 +1,5 @@
 <?php
+// v0.01
 
 $dir="/arubasyslog/log";
 $files=scandir($dir);
@@ -22,15 +23,24 @@ for($i=0;$i<$nfile;$i++){
 }
 
 ksort($data1);
-$cc1=0;
+$totuser=0;
+$totap=0;
+$minuser=10000000;
+$maxuser=0;
 foreach($data1 as $key => $value ){
-$cc2=count($value);
-$cc1+=$cc2;
+  $cc2=count($value);
+  $totuser+=$cc2;
+  $totap++;
+  if($cc2<$minuser)$minuser=$cc2;
+  if($cc2>$maxuser)$maxuser=$cc2;
   echo $key." ".$cc2."\n";
 }
-echo $cc1."\n";
-
-echo count($data2)."\n";
+echo "UserUniqueAP=".$totuser."\n";
+echo "TotalUser=".count($data2)."\n";
+echo "TotAP=".$totap."\n";
+echo "UserperAP=".$totuser/$totap."\n";
+echo "minUser=".$minuser."\n";
+echo "maxUser=".$maxuser."\n";
 
 
 ?>
