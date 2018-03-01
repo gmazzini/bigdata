@@ -24,5 +24,9 @@ for($i=0;$i<$nfile;$i++){
 print_r($data1);
 print_r($data2);
 
+echo count($data1)."\n";
+echo count($data2)."\n";
+
+
 
 ?>
