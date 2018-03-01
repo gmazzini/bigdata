@@ -13,8 +13,6 @@ for($i=0;$i<$nfile;$i++){
     if(feof($fp))break;
     list($timestamp,$ip,$maca,$type)=$myline;
     $data1[$ip][$maca]++;
-    echo "-->".$myline."\n";
-    echo ">>>".$files[$i]." ".$ip." ".$maca."\n";
   }
   fclose($fp);
 }
