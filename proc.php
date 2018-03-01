@@ -1,5 +1,5 @@
 <?php
-// v0.03
+// v0.04
 
 $dir="/arubasyslog/log";
 $files=scandir($dir);
@@ -40,13 +40,13 @@ $totuser=0;
 $totap=0;
 $minuser=10000000;
 $maxuser=0;
-foreach($data1 as $key => $value ){
+foreach($data1 as $ip => $value ){
   $cc2=count($value);
   $totuser+=$cc2;
   $totap++;
   if($cc2<$minuser)$minuser=$cc2;
   if($cc2>$maxuser)$maxuser=$cc2;
-  echo $key." ".$cc2."\n";
+  echo $ip." ".$cc2." ".$data3[$ip]["acctime"]."\n";
 }
 echo "UserUniqueAP=".$totuser."\n";
 echo "TotalUser=".count($data2)."\n";
