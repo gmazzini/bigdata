@@ -1,4 +1,4 @@
-// arubasyslog v0.40 by GM
+// arubasyslog v0.41 by GM
 // changelog
 
 #include <sys/socket.h>
