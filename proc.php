@@ -1,5 +1,5 @@
 <?php
-// v0.12
+// v0.13
 
 $dir="/arubasyslog/log";
 $files=scandir($dir);
@@ -20,13 +20,11 @@ for($i=0;$i<$nfile;$i++){
     $data1[$ip][$maca]++;
     $data2[$maca]++;
     if($type==1 && $data3[$ip][$maca]["last"]!=1){
-      echo ".";
       $data3[$ip][$maca]["time"]=$timestamp;
       $data3[$ip]["user"]++;
       $data3[$ip]["event"]++;
     }
     if(($type==2||$type==3) && $data3[$ip][$maca]["last"]==1){
-      echo "*";
       if($data3[$ip]["user"]>0)$data3[$ip]["user"]--;
       $data3[$ip]["acctime"]+=($timestamp-$data3[$ip][$maca]["time"]);
       $data3[$ip]["accuser"]+=$data3[$ip]["user"];
