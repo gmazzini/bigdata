@@ -1,5 +1,5 @@
 <?php
-// v0.15
+// v0.16
 
 $dir="/arubasyslog/log";
 $files=scandir($dir);
