@@ -6,4 +6,6 @@ if [ "$aa" -ne 1 ]; then
 	cd /arubasyslog
 	killall -9 arubasyslog
 	nohup ./arubasyslog &
+	head -1 arubasyslog.c | awk '{printf "%s ",$2}' >> mylog
+	date >> mylog
 fi
