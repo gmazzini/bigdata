@@ -1,5 +1,5 @@
 <?php
-// v0.18
+// v0.19
 
 $dir="/arubasyslog/log";
 $files=scandir($dir);
@@ -49,7 +49,7 @@ foreach($data1 as $ip => $value ){
   if($cc2>$maxuser)$maxuser=$cc2;
   $avetime=$data3[$ip]["acctime"]/$data3[$ip]["event"];
   $aveuser=$data3[$ip]["accuser"]/$data3[$ip]["event"];
-  if($avetime>0 && $aveuser>0{
+  if($avetime>0 && $aveuser>0){
     $aveuserinbusy+=$aveuser;
     $avetimeinbusy+=$avetime;
   }
