@@ -1,11 +1,15 @@
 #!/bin/bash
 
-aa=`ps -aux | grep -v grep | grep arubasyslog | awk '{print $2}' | wc -l`
-
-if [ "$aa" -ne 1 ]; then
-	cd /arubasyslog
-	killall -9 arubasyslog
-	nohup ./arubasyslog &
-	head -1 arubasyslog.c | awk '{printf "%s ",$2}' >> mylog
-	date >> mylog
-fi
+while [ 1 ] ; do
+  aa=`ps -aux | grep -v grep | grep arubasyslog | awk '{print $2}' | wc -l`
+  if [ "$aa" -ne 1 ]; then
+	  cd /arubasyslog
+	  killall -9 arubasyslog
+    sleep 1
+	  nohup ./arubasyslog &
+	  head -1 arubasyslog.c | awk '{printf "%s ",$2}' >> mylog
+	  date >> mylog
+  fi
+  sleep 2
+done
+  
