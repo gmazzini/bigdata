@@ -2,3 +2,4 @@ curl -k https://raw.githubusercontent.com/gmazzini/bigdata/master/arubasyslog.c 
 curl -k https://raw.githubusercontent.com/gmazzini/bigdata/master/myc > myc
 curl -k https://raw.githubusercontent.com/gmazzini/bigdata/master/makefile > makefile
 curl -k https://raw.githubusercontent.com/gmazzini/bigdata/master/proc.php > proc.php
+curl -k https://raw.githubusercontent.com/gmazzini/bigdata/master/mycheck > mycheck
