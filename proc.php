@@ -1,5 +1,5 @@
 <?php
-// v0.19
+// v0.20
 
 $dir="/arubasyslog/log";
 $files=scandir($dir);
@@ -54,6 +54,7 @@ foreach($data1 as $ip => $value ){
     $avetimeinbusy+=$avetime;
   }
   $hostname=gethostbyaddr($ip);
+  $hostname=strtok($hostname,".");
   printf("%s %s %d %.2f %.2f\n",$ip,$hostname,$cc2,$aveuser,$avetime);
 }
 printf("UserUniqueAP=%d\n",$totuser);
